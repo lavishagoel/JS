@@ -1,0 +1,97 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href ="style.css">
+
+</head>
+<body>
+    <script src ="script.js"></script>
+    <h1>JAVASCRIPT CLASS</h1>
+    <div id="Grandparent">
+    <div id="Parent">
+    <div id="Child">
+
+    </div>
+    </div>
+    </div>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            height: 90vh;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+        .one{
+            height: 300px;
+            width: 300px;
+            border: solid 5px black;
+        }
+        .two{
+               height: 300px;
+            width: 300px;
+            border: solid 5px black;
+        }
+        .three{
+            height: 300px;
+            width: 300px;
+            border: solid 5px black;
+        }
+        .four{
+               height: 300px;
+            width: 300px;
+            border: solid 5px black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="compuetr"></div>
+        <div class="laptop"></div>
+        <div class="mouse"></div>
+        <div class="keyboard"></div>
+    </div>
+    <script>
+    const boxes = document.querySelectorAll('.box');
+
+    async function fetchData() {
+      try {
+        const response = await fetch('https://dummyjson.com/products');
+        const data = await response.json();
+        const products = data.products;
+
+        
+        boxes.forEach((box, index) => {
+          const product = products[index];
+          box.innerHTML = `
+            <h3>${product.title}</h3>
+            <p>Price: $${product.price}</p>
+            <p>${product.description}</p>
+          `;
+        });
+      } catch (err) {
+        console.error('Error fetching data:', err);
+      }
+    }
+
+    fetchData();
+  </script>
+</body>
+</html>
