@@ -256,5 +256,20 @@ orderStatus();
 //     console.log("child div")
 // },true)
 
+// const computer= document.getElementById('computer');
+// const laptop= document.getElementById('laptop');
+// const mouse= document.getElementById('mouse');
+// const keyboard= document.getElementById('keyboard');
 
+function closure(){
+const searchBox= document.getElementById("searchHandle");
 
+let timeoutId;
+searchBox.addEventListener("input", (event)=>{
+    clearTimeout(timeoutId)
+    timeoutId=setTimeout(()=>{
+        console.log(event.target.value);
+    },2000)
+});
+}
+closure();
