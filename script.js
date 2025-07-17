@@ -261,15 +261,43 @@ orderStatus();
 // const mouse= document.getElementById('mouse');
 // const keyboard= document.getElementById('keyboard');
 
-function closure(){
-const searchBox= document.getElementById("searchHandle");
+// function closure(){
+// const searchBox= document.getElementById("searchHandle");
 
-let timeoutId;
-searchBox.addEventListener("input", (event)=>{
-    clearTimeout(timeoutId)
-    timeoutId=setTimeout(()=>{
-        console.log(event.target.value);
-    },2000)
+// let timeoutId;
+// searchBox.addEventListener("input", (event)=>{
+//     clearTimeout(timeoutId)
+//     timeoutId=setTimeout(()=>{
+//         console.log(event.target.value);
+//     },2000)
+// });
+// }
+// closure();
+
+
+// (function(module, require){
+//     require("./path");
+//     function sumOfTwo(a,b){
+//         console.log(a+b)
+//         return a/b;
+//     }
+//     module.exports={sumOfTwo}
+// }()) // iife immediate invoke function 
+
+// eventemmiter
+
+// in this we can pass multiple arguments also
+
+
+const EventEmmiter = require('node:events');
+
+const eventEmmiter = new EventEmmiter();
+
+eventEmmiter.on('g5', ()=>{
+    console.log('started');
 });
-}
-closure();
+eventEmmiter.emit('g5');
+
+// dns module assignment 
+// assignment2_dns_module
+
